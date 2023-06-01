@@ -18,6 +18,6 @@
     "@tresjs/core": "2.1.2",
     "@types/three": "^0.151.0",
     "unplugin-auto-import": "^0.15.3",
-    "unplugin-vue-components": "^0.24.1"
+    "unplugin-vue-components": "^0.25.0"
   }
 }
