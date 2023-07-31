@@ -17,7 +17,7 @@
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
-    "@tresjs/cientos": "3.0.1",
+    "@tresjs/cientos": "2.3.0",
     "@tresjs/core": "3.0.1",
     "@types/three": "^0.154.0",
     "three": "^0.155.0",
