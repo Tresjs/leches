@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@tresjs/cientos": "3.0.1",
-    "@tresjs/core": "3.0.1",
+    "@tresjs/core": "2.4.2",
     "@types/three": "^0.154.0",
     "three": "^0.155.0",
     "unplugin-auto-import": "^0.16.6",
