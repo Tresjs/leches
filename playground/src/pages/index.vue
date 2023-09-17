@@ -125,10 +125,21 @@ console.log('folder', folder)
 watchEffect(() => {
   console.log('folder', folder.pepe.value.value)
 })
+
+const ambientLight = useControls('AmbienLight', {
+  intensity: 0.5,
+  color: '#ff0000',
+})
+
+const directonalLight =useControls('DirectionalLight', {
+  intensity: 0.5,
+  color: '#ff0000',
+})
 </script>
 
 <template>
-  <pre>{{ position.value }}</pre>
+  <pre>{{ ambientLight }}</pre>
+  <pre>{{ directonalLight }}</pre>
   <TresLeches />
   <TresLeches uuid="second" />
   <TresCanvas v-bind="gl">

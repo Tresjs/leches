@@ -12,6 +12,18 @@ export function useControlsProvider(uuid: string = DEFAULT_UUID) {
   provide(CONTROLS_CONTEXT_KEY, controlsStore)
   return controlsStore[uuid]
 }
+
+const generateUniqueKey = (baseKey: string, controls: any): string => {
+  let suffix = 1;
+  let newKey = `${baseKey}${suffix}`;
+
+  while (controls[newKey]) {
+    suffix++;
+    newKey = `${baseKey}${suffix}`;
+  }
+
+  return newKey;
+};
 // Helper function to infer type
 const inferType = (value: any): string => {
   const colorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$|^0x([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
@@ -88,6 +100,11 @@ export const useControls = (
   const reactiveRefs = isParamsReactive ? toRefs(controlsParams as { [key: string]: any }) : {}
 
   for (const key in controlsParams as any) {
+    let uniqueKey = key;
+      // Check if a control with this key already exists and generate a unique key if necessary
+    if (controls[uniqueKey]) {
+      uniqueKey = generateUniqueKey(key, controls);
+    }
     let value = (controlsParams as any)[key]
 
     // If controlsParams is reactive, use the reactive ref directly
@@ -126,16 +143,16 @@ export const useControls = (
 
       control.visible.value = controlOptions.visible !== undefined ? controlOptions.visible : true
 
-      controls[key] = control
-      result[key] = control
+      controls[uniqueKey] = control
+      result[uniqueKey] = control
       continue
     }
 
     // If the value is a ref, use it directly
     if (isRef(value)) {
-      const control = createControl(key, value, inferType(value.value), folderName)
-      controls[key] = control
-      result[key] = control
+      const control = createControl(uniqueKey, value, inferType(value.value), folderName)
+      controls[uniqueKey] = control
+      result[uniqueKey] = control
       continue
     }
 
@@ -148,11 +165,11 @@ export const useControls = (
     }
 
     // For non-ref values
-    const control = createControl(key, value, inferType(value), folderName)
+    const control = createControl(uniqueKey, value, inferType(value), folderName)
 
     // Update the internal state
-    controls[key] = control
-    result[key] = control
+    controls[uniqueKey] = control
+    result[uniqueKey] = control
   }
 
   return Object.keys(result).length > 1 ? toRefs(reactive(result)) : Object.values(result)[0]
