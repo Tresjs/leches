@@ -19,8 +19,8 @@
   "devDependencies": {
     "@tresjs/cientos": "3.2.0",
     "@tresjs/core": "3.2.0",
-    "@types/three": "^0.155.1",
-    "three": "^0.155.0",
+    "@types/three": "^0.158.0",
+    "three": "^0.158.0",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.1"
   }
