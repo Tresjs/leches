@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.21",
-    "@tresjs/cientos": "3.5.1",
+    "@tresjs/cientos": "3.6.0",
     "@tresjs/core": "3.5.0",
     "@types/three": "^0.158.1",
     "three": "^0.158.0",
