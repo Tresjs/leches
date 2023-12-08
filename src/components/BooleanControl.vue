@@ -39,7 +39,7 @@ function onKeydown(event: KeyboardEvent) {
         tabindex="0"
         role="checkbox"
         :aria-checked="control.value.toString()"
-        :class="{ 'tl-bg-dark-500': control.value, 'tl-bg-gray-200': !control.value }"
+        :class="{ 'tl-bg-dark-500 dark:tl-bg-slate-400/50': control.value, 'tl-bg-gray-200': !control.value }"
         class="tl-w-4 
           tl-h-4 
           tl-flex 
