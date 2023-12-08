@@ -44,10 +44,11 @@ useRafFn(({ timestamp }) => {
 
 <template>
   <div class="tl-flex tl-px-4 tl-justify-between tl-gap-4 tl-items-center tl-mb-2">
-    <label class="tl-text-gray-500 tl-w-1/3 tl-text-primary">{{ label }}</label>
+    <label class="tl-text-secondary tl-w-1/3">{{ label }}</label>
 
     <div
       class="
+        tl-bg-secondary
         tl-relative
         tl-w-2/3
         tl-p-1
@@ -58,10 +59,9 @@ useRafFn(({ timestamp }) => {
         tl-outline-none
         tl-border-none
         tl-font-sans
-        tl-bg-secondary
       "
     >
-      <div class="tl-absolute tl-bottom-0.5 tl-right-0.5 tl-font-sans tl-text-xs tl-text-primary">
+      <div class="tl-text-primary tl-absolute tl-bottom-0.5 tl-right-0.5 tl-font-sans tl-text-xs">
         {{ Math.round(fps) }} FPS
       </div>
       <svg
