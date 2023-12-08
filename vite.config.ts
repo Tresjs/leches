@@ -57,6 +57,13 @@ export default defineConfig({
         }),
       ],
       transformers: [transformerDirectives()],
+      shortcuts: {
+        'tl-cta-icon': 'tl-h-4 tl-w-4 tl-p-1.5 tl-flex tl-items-center tl-line-height-0 tl-rounded-full tl-bg-gray-100 tl-text-xs',
+        'tl-bg-primary': 'tl-bg-white dark:tl-bg-[#1a1a1a]',
+        'tl-bg-secondary': 'tl-bg-gray-100 dark:tl-bg-slate-400/50',
+        'tl-border-primary': 'tl-border-black dark:tl-border-slate-400/50',
+
+      },
     }),
     /*  cssInjectedByJsPlugin(), */
 
