@@ -44,7 +44,7 @@ useRafFn(({ timestamp }) => {
 
 <template>
   <div class="tl-flex tl-px-4 tl-justify-between tl-gap-4 tl-items-center tl-mb-2">
-    <label class="tl-text-gray-500 tl-w-1/3">{{ label }}</label>
+    <label class="tl-text-gray-500 tl-w-1/3 tl-text-primary">{{ label }}</label>
 
     <div
       class="
