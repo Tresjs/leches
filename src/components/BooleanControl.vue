@@ -23,7 +23,7 @@ function onKeydown(event: KeyboardEvent) {
 
 <template>
   <div class="tl-flex tl-px-4 tl-justify-start tl-gap-2 tl-items-center tl-mb-2 tl-min-h-32px">
-    <label class="tl-text-gray-500 tl-w-1/3 tl-text-primary">{{ label }}</label>
+    <label class="tl-text-secondary tl-w-1/3">{{ label }}</label>
     <input
       :id="control.uniqueKey"
       :checked="control.value"
