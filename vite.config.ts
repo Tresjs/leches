@@ -10,7 +10,7 @@ import analyze from 'rollup-plugin-analyzer'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { resolve } from 'pathe'
 import UnoCSS from 'unocss/vite'
-import { presetUno, presetIcons, presetWebFonts, transformerDirectives } from 'unocss'
+import { presetUno, presetIcons, presetWebFonts, transformerDirectives, presetMini } from 'unocss'
 import { lightGreen, magenta, gray, bold } from 'kolorist'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
@@ -35,6 +35,7 @@ export default defineConfig({
     UnoCSS({
       /* options */
       presets: [
+        presetMini(),
         presetUno({
           prefix: 'tl-',
           variablePrefix: 'tl-',
