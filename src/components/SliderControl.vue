@@ -82,7 +82,9 @@ watch(mouse.x, (newValue) => {
     >
     <input
       :value="control.value"
-      class="
+      class="  
+        tl-bg-secondary
+        tl-text-primary
         tl-p-2
         tl-w-1/4
         tl-rounded
@@ -93,8 +95,6 @@ watch(mouse.x, (newValue) => {
         tl-outline-none
         tl-border-none
         tl-font-sans
-        tl-bg-secondary
-        tl-text-primary
       "
       :class="{ 'tl-cursor-ew-resize': isMouseDown }"
       type="number"
