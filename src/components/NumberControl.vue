@@ -66,6 +66,8 @@ watch(mouse.x, (newValue) => {
       :id="control.uniqueKey"
       :value="control.value"
       class="
+        tl-bg-secondary
+        tl-text-primary
         tl-p-2
         tl-w-1/3
         tl-rounded
@@ -75,8 +77,6 @@ watch(mouse.x, (newValue) => {
         tl-outline-none
         tl-border-none
         tl-font-sans
-        tl-bg-secondary
-        tl-text-primary
       "
       type="number"
       :class="{ 'tl-cursor-ew-resize': isMouseDown }"
