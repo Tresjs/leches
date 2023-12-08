@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { ref, toRefs, unref, computed } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import { useWindowSize, useDark, useToggle } from '@vueuse/core'
 import { UseDraggable } from '../composables/useDraggable/component'
 import { useControlsProvider } from '../composables/useControls'
 import type { Control } from '../types'
@@ -14,6 +14,8 @@ const props = defineProps<{
 }>()
 
 const { uuid } = toRefs(props)
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 const { width } = useWindowSize()
 
@@ -55,29 +57,22 @@ const groupedControls = computed(() => {
   >
     <div
       tabindex="0"
-      class="tl-bg-white tl-shadow-xl tl-rounded tl-border-4 tl-border-solid tl-border-black"
+      class="tl-shadow-xl tl-rounded tl-border-4 tl-border-solid tl-bg-primary tl-border-primary tl-overflow-hidden tl-w-full tl-h-full tl-flex tl-flex-col tl-justify-between"
     >
       <header
         ref="handle"
-        class="tl-relative tl-cursor-grabbing tl-p-4 tl-flex tl-justify-between tl-text-gray-200 tl-relative"
+        class="tl-relative tl-cursor-grabbing tl-p-4 tl-flex tl-justify-evenly tl-text-gray-200"
       >
-        <i
-          class="tl-h-4
-            tl-w-4
-            tl-p-1.5
-            tl-flex
-            tl-items-center
-            tl-line-height-0
-            tl-rounded-full
-            tl-bg-gray-100
-            tl-text-xs"
-        >🍰</i>
+        <i class="tl-cta-icon tl-bg-secondary">🍰</i>
         <div>
-          <i class="i-ic-baseline-drag-indicator" /><i class="i-ic-baseline-drag-indicator" /><i
-            class="i-ic-baseline-drag-indicator"
-          />
+          <i class="i-ic-baseline-drag-indicator tl-bg-secondary" />
+          <i class="i-ic-baseline-drag-indicator tl-bg-secondary" />
+          <i class="i-ic-baseline-drag-indicator tl-bg-secondary" />
         </div>
-        <div />
+        <i
+          class="tl-cta-icon tl-bg-secondary"
+          @click="toggleDark()"
+        >{{ isDark ? '☀️' : '🌙' }}</i>
       </header>
       <template
         v-for="(group, folderName) of groupedControls"
