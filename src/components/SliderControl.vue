@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
-import { useMouse } from '@vueuse/core'
+import { useMouse, useDark } from '@vueuse/core'
 import type { Control } from '../types'
 import ControlLabel from './ControlLabel.vue'
 
@@ -11,13 +11,15 @@ const props = defineProps<{
 
 const emit = defineEmits(['change'])
 
+const isDark = useDark()
+
 function onChange(event: Event) {
   const { target } = event
   emit('change', (target as HTMLInputElement).valueAsNumber)
 }
 
 const sliderFilledStyle = computed(() => ({
-  backgroundImage: `linear-gradient(to right, #333 0% ${
+  backgroundImage: `linear-gradient(to right, ${isDark.value ? '#71717a' : '#333'} 0% ${
     (100 * ((props.control.value as number) - (props.control.min || 0)))
     / ((props.control.max || 100) - (props.control.min || 0))
   }%, #e2e2e2 0%)`,
@@ -87,11 +89,12 @@ watch(mouse.x, (newValue) => {
         tl-text-right
         tl-text-xs
         tl-text-gray-400
-        tl-bg-gray-100
         tl-focus:border-gray-200
         tl-outline-none
         tl-border-none
         tl-font-sans
+        tl-bg-secondary
+        tl-text-primary
       "
       :class="{ 'tl-cursor-ew-resize': isMouseDown }"
       type="number"
@@ -114,10 +117,10 @@ input[type='range'] {
 }
 
 input[type='range']::-webkit-slider-thumb {
-  @apply tl-h-4 tl-w-3 tl-border-2 tl-bg-dark-200 tl-rounded-sm tl-cursor-pointer tl-appearance-none tl-shadow-lg;
+  @apply tl-h-4 tl-w-3 tl-border-2 tl-rounded-sm tl-cursor-pointer tl-bg-dark-200 dark:tl-bg-zinc-500 tl-appearance-none tl-shadow-lg;
 }
 
 input[type='range']::-moz-range-thumb {
-  @apply tl-h-4 tl-w-3 tl-border-2 tl-bg-dark-200 tl-rounded-sm tl-cursor-pointer tl-appearance-none tl-shadow-lg;
+  @apply tl-h-4 tl-w-3 tl-border-2 tl-rounded-sm tl-cursor-pointer tl-bg-dark-200 dark:tl-bg-zinc-500 tl-appearance-none tl-shadow-lg;
 }
 </style>
