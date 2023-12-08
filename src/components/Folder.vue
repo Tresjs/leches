@@ -24,6 +24,7 @@ const toggle = () => {
     <button
       class="
         tl-bg-primary
+        tl-text-primary
         tl-flex
         tl-items-center
         tl-justify-between
@@ -31,8 +32,6 @@ const toggle = () => {
         tl-py-2
         tl-px-4
         tl-border-none
-        tl-bg-gray-100
-        tl-text-gray-400
         tl-font-bold
         tl-text-xs
         tl-font-sans
