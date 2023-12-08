@@ -71,12 +71,12 @@ watch(mouse.x, (newValue) => {
         tl-rounded
         tl-text-right
         tl-text-xs
-        tl-text-gray-400
-        tl-bg-gray-100
         tl-focus:border-gray-200
         tl-outline-none
         tl-border-none
         tl-font-sans
+        tl-bg-secondary
+        tl-text-primary
       "
       type="number"
       :class="{ 'tl-cursor-ew-resize': isMouseDown }"
