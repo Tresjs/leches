@@ -20,7 +20,7 @@ const toggle = () => {
 </script>
 
 <template>
-  <div class="tl-mb-4 tl-w-full tl-border-x-none tl-border-solid tl-border-primary">
+  <div class="tl-mb-4 tl-w-full tl-border-x-none tl-border-solid tl-border-1 tl-border-primary">
     <button
       class="
         tl-bg-primary
