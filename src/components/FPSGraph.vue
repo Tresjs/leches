@@ -55,11 +55,11 @@ useRafFn(({ timestamp }) => {
         tl-text-right
         tl-text-xs
         tl-text-gray-400
-        tl-bg-gray-100
         tl-focus:border-gray-200
         tl-outline-none
         tl-border-none
         tl-font-sans
+        tl-bg-secondary
       "
     >
       <div class="tl-absolute tl-bottom-0.5 tl-right-0.5 tl-font-sans tl-text-xs">
@@ -69,11 +69,10 @@ useRafFn(({ timestamp }) => {
         :width="width"
         :height="height"
         xmlns="http://www.w3.org/2000/svg"
-        class="tl-bg-gray-100"
+        fill="none"
       >
         <polyline
           :points="points"
-          fill="none"
           stroke="lightgray"
           :stroke-width="strokeWidth"
           stroke-linecap="round"
