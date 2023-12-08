@@ -16,7 +16,7 @@ function onChange(event: Event) {
 
 <template>
   <div class="tl-flex tl-px-4 tl-justify-between tl-gap-4 tl-items-center tl-mb-2">
-    <label class="tl-text-primary tl-w-1/3">{{ label }}</label>
+    <label class="tl-text-secondary tl-w-1/3">{{ label }}</label>
     <input
       :id="control.uniqueKey"
       tabindex="0"
