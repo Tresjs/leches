@@ -11,6 +11,9 @@ importers:
       '@unocss/core':
         specifier: ^0.57.7
         version: 0.57.7
+      '@unocss/preset-mini':
+        specifier: ^0.57.7
+        version: 0.57.7
       '@vueuse/components':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.9)
@@ -2286,7 +2289,6 @@ packages:
     resolution: {integrity: sha512-JdyhPlsgS0x4zoF8WYXDcusPcpU4ysE6Rkkit4a9+xUZEvg7vy7InH6PQ8dL8B9oY7pbxF7G6eFguUDpv9xx4Q==}
     dependencies:
       '@unocss/core': 0.57.7
-    dev: true
 
   /@unocss/inspector@0.57.7:
     resolution: {integrity: sha512-b9ckqn5aRsmhTdXJ5cPMKDKuNRe+825M+s9NbYcTjENnP6ellUFZo91sYF5S+LeATmU12TcwJZ83NChF4HpBSA==}
@@ -2334,7 +2336,6 @@ packages:
       '@unocss/core': 0.57.7
       '@unocss/extractor-arbitrary-variants': 0.57.7
       '@unocss/rule-utils': 0.57.7
-    dev: true
 
   /@unocss/preset-tagify@0.57.7:
     resolution: {integrity: sha512-va25pTJ5OtbqCHFBIj8myVk0PwuSucUqTx840r/YSHka0P9th6UGRS1LU30OUgjgr7FhLaWXtJMN4gkCUtQSoA==}
@@ -2383,7 +2384,6 @@ packages:
     dependencies:
       '@unocss/core': 0.57.7
       magic-string: 0.30.5
-    dev: true
 
   /@unocss/scope@0.57.7:
     resolution: {integrity: sha512-pqWbKXcrTJ2ovVRTYFLnUX5ryEhdSXp7YfyBQT3zLtQb4nQ2XZcLTvGdWo7F+9jZ09yP7NdHscBLkeWgx+mVgw==}
