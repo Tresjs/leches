@@ -29,12 +29,12 @@ function onChange(event: Event) {
         tl-rounded
         tl-text-left
         tl-text-xs
-        tl-text-gray-400
-        tl-bg-gray-100
         focus:tl-border-gray-200
         tl-outline-none
         tl-border-none
         tl-font-sans
+        tl-bg-secondary
+        tl-text-primary
       "
       @change="onChange"
     >
