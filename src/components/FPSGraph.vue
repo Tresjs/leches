@@ -54,7 +54,6 @@ useRafFn(({ timestamp }) => {
         tl-rounded
         tl-text-right
         tl-text-xs
-        tl-text-gray-400
         tl-focus:border-gray-200
         tl-outline-none
         tl-border-none
@@ -62,7 +61,7 @@ useRafFn(({ timestamp }) => {
         tl-bg-secondary
       "
     >
-      <div class="tl-absolute tl-bottom-0.5 tl-right-0.5 tl-font-sans tl-text-xs">
+      <div class="tl-absolute tl-bottom-0.5 tl-right-0.5 tl-font-sans tl-text-xs tl-text-primary">
         {{ Math.round(fps) }} FPS
       </div>
       <svg
