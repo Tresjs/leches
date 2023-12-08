@@ -35,6 +35,8 @@ function onChange(event: Event) {
         tl-text-right
         tl-text-xs
         focus:tl-border-gray-200
+        placeholder:tl-text-gray-300
+        placeholder:dark:tl-text-gray-400
         tl-border-none
         tl-font-sans
       "
