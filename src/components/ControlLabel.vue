@@ -11,7 +11,7 @@ defineProps<{
   <label
     :for="control.uniqueKey"
     :title="label"
-    class="tl-text-gray-500 tl-w-1/3 tl-truncate"
+    class="tl-text-gray-500 tl-w-1/3 tl-truncate tl-text-primary"
   >
     <i
       v-if="control.icon"
