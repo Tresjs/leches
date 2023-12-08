@@ -24,6 +24,8 @@ function onChange(event: Event) {
       :id="control.uniqueKey"
       :value="control.value"
       class="
+        tl-bg-secondary
+        tl-text-primary
         tl-p-2
         tl-w-2/3
         tl-rounded
@@ -33,8 +35,6 @@ function onChange(event: Event) {
         tl-outline-none
         tl-border-none
         tl-font-sans
-        tl-bg-secondary
-        tl-text-primary
       "
       @change="onChange"
     >
