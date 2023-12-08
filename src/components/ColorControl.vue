@@ -16,7 +16,7 @@ function onChange(event: Event) {
 
 <template>
   <div class="tl-flex tl-px-4 tl-justify-between tl-gap-4 tl-items-center tl-mb-2">
-    <label class="tl-text-gray-500 tl-w-1/3">{{ label }}</label>
+    <label class="tl-text-primary tl-w-1/3">{{ label }}</label>
     <input
       :id="control.uniqueKey"
       tabindex="0"
@@ -33,13 +33,13 @@ function onChange(event: Event) {
       :aria-label="label"
       :value="control.value"
       class="
+        tl-text-primary
+        tl-bg-secondary
         tl-p-2 
         tl-w-2/3
         tl-rounded
         tl-text-right
         tl-text-xs
-        tl-text-gray-400
-        tl-bg-gray-100
         tl-border-none
         tl-font-sans
       "
