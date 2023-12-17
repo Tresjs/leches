@@ -57,7 +57,18 @@ const groupedControls = computed(() => {
   >
     <div
       tabindex="0"
-      class="tl-shadow-xl tl-rounded tl-border-4 tl-border-solid tl-bg-primary tl-border-primary tl-overflow-hidden tl-w-full tl-h-full tl-flex tl-flex-col tl-justify-between"
+      class="tl-shadow-xl
+      tl-rounded 
+      tl-border-4 
+      tl-border-solid 
+      tl-bg-primary 
+      tl-border-primary 
+      tl-overflow-hidden 
+      tl-w-full 
+      tl-h-full 
+      tl-flex 
+      tl-flex-col 
+      tl-justify-between"
     >
       <header
         ref="handle"
