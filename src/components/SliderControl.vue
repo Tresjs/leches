@@ -117,10 +117,28 @@ input[type='range'] {
 }
 
 input[type='range']::-webkit-slider-thumb {
-  @apply tl-h-4 tl-w-3 tl-border-2 tl-rounded-sm tl-cursor-pointer tl-bg-dark-200 dark:tl-bg-zinc-500 tl-appearance-none tl-shadow-lg;
+  @apply 
+  tl-h-4 
+  tl-w-3
+  tl-border-2
+  tl-rounded-sm 
+  tl-cursor-pointer 
+  tl-bg-dark-200 
+  dark:tl-bg-zinc-500 
+  tl-appearance-none 
+  tl-shadow-lg;
 }
 
 input[type='range']::-moz-range-thumb {
-  @apply tl-h-4 tl-w-3 tl-border-2 tl-rounded-sm tl-cursor-pointer tl-bg-dark-200 dark:tl-bg-zinc-500 tl-appearance-none tl-shadow-lg;
+  @apply 
+  tl-h-4 
+  tl-w-3 
+  tl-border-2 
+  tl-rounded-sm 
+  tl-cursor-pointer 
+  tl-bg-dark-200 
+  dark:tl-bg-zinc-500 
+  tl-appearance-none 
+  tl-shadow-lg;
 }
 </style>
