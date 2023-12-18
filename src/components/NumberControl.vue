@@ -66,13 +66,13 @@ watch(mouse.x, (newValue) => {
       :id="control.uniqueKey"
       :value="control.value"
       class="
+        tl-bg-secondary
+        tl-text-primary
         tl-p-2
         tl-w-1/3
         tl-rounded
         tl-text-right
         tl-text-xs
-        tl-text-gray-400
-        tl-bg-gray-100
         tl-focus:border-gray-200
         tl-outline-none
         tl-border-none

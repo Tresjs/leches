@@ -20,9 +20,7 @@ const classes = computed(() => {
     :class="classes"
     @click="control.value.onClick"
   >
-    <i
-      :class="[control.value.icon, control.value.label ? 'mr-1' : '']"
-    />
+    <i :class="[control.value.icon, control.value.label ? 'mr-1' : '']" />
     {{ control.value.label }}
   </button>
 </template>
@@ -51,17 +49,10 @@ const classes = computed(() => {
 }
 
 .leches-btn-primary {
-  @apply tl-bg-gray-100 tl-text-gray-700;
-}
-.leches-btn-primary:hover {
-  @apply tl-bg-gray-200;
+  @apply tl-btn-primary;
 }
 
 .leches-btn-secondary {
-  @apply tl-bg-dark-700 tl-text-light-100;
-}
-
-.leches-btn-secondary:hover {
-  @apply tl-bg-dark-600;
+  @apply tl-btn-secondary;
 }
 </style>

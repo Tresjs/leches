@@ -20,18 +20,18 @@ const toggle = () => {
 </script>
 
 <template>
-  <div class="tl-mb-4">
+  <div class="tl-mb-4 tl-w-full tl-border-x-none tl-border-solid tl-border-1 tl-border-primary">
     <button
       class="
+        tl-bg-primary
+        tl-text-primary
         tl-flex
         tl-items-center
         tl-justify-between
         tl-w-full
         tl-py-2
         tl-px-4
-        tl-bg-gray-100
         tl-border-none
-        tl-text-gray-400
         tl-font-bold
         tl-text-xs
         tl-font-sans
@@ -55,7 +55,7 @@ const toggle = () => {
     >
       <div
         v-show="isOpen"
-        class="tl-bg-white tl-rounded-b tl-pt-4"
+        class="tl-bg-white tl-rounded-b tl-pt-4 tl-bg-primary"
         role="menu"
       >
         <template

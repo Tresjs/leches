@@ -24,13 +24,13 @@ function onChange(event: Event) {
       :id="control.uniqueKey"
       :value="control.value"
       class="
+        tl-bg-secondary
+        tl-text-primary
         tl-p-2
         tl-w-2/3
         tl-rounded
         tl-text-left
         tl-text-xs
-        tl-text-gray-400
-        tl-bg-gray-100
         focus:tl-border-gray-200
         tl-outline-none
         tl-border-none

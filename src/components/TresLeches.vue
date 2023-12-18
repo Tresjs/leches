@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { ref, toRefs, unref, computed } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import { useWindowSize, useDark, useToggle } from '@vueuse/core'
 import { UseDraggable } from '../composables/useDraggable/component'
 import { useControlsProvider } from '../composables/useControls'
 import type { Control } from '../types'
@@ -14,6 +14,8 @@ const props = defineProps<{
 }>()
 
 const { uuid } = toRefs(props)
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 const { width } = useWindowSize()
 
@@ -55,29 +57,39 @@ const groupedControls = computed(() => {
   >
     <div
       tabindex="0"
-      class="tl-bg-white tl-shadow-xl tl-rounded tl-border-4 tl-border-solid tl-border-black"
+      class="tl-shadow-xl
+      tl-rounded 
+      tl-border-4 
+      tl-border-solid 
+      tl-bg-primary 
+      tl-border-primary 
+      tl-overflow-hidden 
+      tl-w-full 
+      tl-h-full 
+      tl-flex 
+      tl-flex-col 
+      tl-justify-between"
     >
       <header
         ref="handle"
-        class="tl-relative tl-cursor-grabbing tl-p-4 tl-flex tl-justify-between tl-text-gray-200 tl-relative"
+        class="tl-relative  tl-p-4 tl-flex tl-justify-between tl-items-center tl-text-gray-200"
       >
-        <i
-          class="tl-h-4
-            tl-w-4
-            tl-p-1.5
-            tl-flex
-            tl-items-center
-            tl-line-height-0
-            tl-rounded-full
-            tl-bg-gray-100
-            tl-text-xs"
-        >🍰</i>
-        <div>
-          <i class="i-ic-baseline-drag-indicator" /><i class="i-ic-baseline-drag-indicator" /><i
-            class="i-ic-baseline-drag-indicator"
+        <i class="tl-cta-icon tl-bg-secondary">🍰</i>
+        <div class="tl-cursor-grabbing">
+          <i class="i-ic-baseline-drag-indicator tl-text-primary" />
+          <i class="i-ic-baseline-drag-indicator tl-text-primary" />
+          <i class="i-ic-baseline-drag-indicator tl-text-primary" />
+        </div>
+        <div class="actions">
+          <i
+            class="tl-text-sm tl-text-primary hover:tl-text-secondary tl-cursor-pointer"
+            :class="{
+              'i-carbon-moon': !isDark,
+              'i-carbon-sun': isDark,
+            }"
+            @click="toggleDark()"
           />
         </div>
-        <div />
       </header>
       <template
         v-for="(group, folderName) of groupedControls"

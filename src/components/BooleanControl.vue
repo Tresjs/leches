@@ -23,7 +23,7 @@ function onKeydown(event: KeyboardEvent) {
 
 <template>
   <div class="tl-flex tl-px-4 tl-justify-start tl-gap-2 tl-items-center tl-mb-2 tl-min-h-32px">
-    <label class="tl-text-gray-500 tl-w-1/3">{{ label }}</label>
+    <label class="tl-text-secondary tl-w-1/3">{{ label }}</label>
     <input
       :id="control.uniqueKey"
       :checked="control.value"
@@ -39,7 +39,10 @@ function onKeydown(event: KeyboardEvent) {
         tabindex="0"
         role="checkbox"
         :aria-checked="control.value.toString()"
-        :class="{ 'tl-bg-dark-500': control.value, 'tl-bg-gray-200': !control.value }"
+        :class="{
+          'tl-bg-dark-500': control.value, 
+          'tl-bg-gray-200': !control.value, 
+        }"
         class="tl-w-4 
           tl-h-4 
           tl-flex 
@@ -50,7 +53,9 @@ function onKeydown(event: KeyboardEvent) {
           tl-border-gray-300 
           tl-mr-2 
           tl-transition-colors 
-          tl-duration-200"
+          tl-duration-200
+          dark:tl-bg-slate-400/50
+        "
         @keydown="onKeydown"
       >
         <i
