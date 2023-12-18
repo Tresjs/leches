@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable vue/max-len */
 /// <reference types="histoire" />
 /// <reference types="vitest" />
 
@@ -12,7 +14,6 @@ import { resolve } from 'pathe'
 import UnoCSS from 'unocss/vite'
 import { presetUno, presetIcons, presetWebFonts, transformerDirectives, presetMini } from 'unocss'
 import { lightGreen, magenta, gray, bold } from 'kolorist'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 import pkg from './package.json'
 
@@ -69,7 +70,7 @@ export default defineConfig({
       },
     }),
     /*  cssInjectedByJsPlugin(), */
-
+  
   ],
   test: {
     environment: process.env.BROWSER_TEST ? 'node' : 'jsdom',
@@ -141,3 +142,5 @@ export default defineConfig({
     exclude: ['vue', '@vueuse/core'],
   },
 })
+/* eslint-enable max-len */
+/* eslint-enable vue/max-len */
