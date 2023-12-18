@@ -3,8 +3,9 @@
 exports[`Number Control > should render a number control 1`] = `
 "<div style=\\"left: 704px; top: 10px;\\" class=\\"tl-absolute tl-select-none tl-z-24 tl-w-280px tl-font-sans tl-text-xs\\">
   <div tabindex=\\"0\\" class=\\"tl-shadow-xl tl-rounded tl-border-4 tl-border-solid tl-bg-primary tl-border-primary tl-overflow-hidden tl-w-full tl-h-full tl-flex tl-flex-col tl-justify-between\\">
-    <header class=\\"tl-relative tl-cursor-grabbing tl-p-4 tl-flex tl-justify-evenly tl-text-gray-200\\"><i class=\\"tl-cta-icon tl-bg-secondary\\">🍰</i>
-      <div><i class=\\"i-ic-baseline-drag-indicator tl-bg-secondary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-bg-secondary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-bg-secondary\\"></i></div><i class=\\"tl-cta-icon tl-bg-secondary\\">🌙</i>
+    <header class=\\"tl-relative tl-p-4 tl-flex tl-justify-between tl-items-center tl-text-gray-200\\"><i class=\\"tl-cta-icon tl-bg-secondary\\">🍰</i>
+      <div class=\\"tl-cursor-grabbing\\"><i class=\\"i-ic-baseline-drag-indicator tl-text-primary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-text-primary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-text-primary\\"></i></div>
+      <div class=\\"actions\\"><i class=\\"tl-text-sm tl-text-primary hover:tl-text-secondary tl-cursor-pointer i-carbon-moon\\"></i></div>
     </header>
     <!--v-if-->
     <div class=\\"tl-flex tl-px-4 tl-justify-between tl-gap-4 tl-items-center tl-mb-2\\"><label for=\\"numberValue\\" title=\\"numberValue\\" class=\\"tl-text-secondary tl-w-1/3 tl-truncate\\">numberValue</label><input id=\\"numberValue\\" class=\\"tl-bg-secondary tl-text-primary tl-p-2 tl-w-1/3 tl-rounded tl-text-right tl-text-xs tl-focus:border-gray-200 tl-outline-none tl-border-none tl-font-sans\\" type=\\"number\\"></div>

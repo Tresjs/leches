@@ -3,8 +3,9 @@
 exports[`Folder Controls > should render controls within a folder 1`] = `
 "<div style=\\"left: 704px; top: 10px;\\" class=\\"tl-absolute tl-select-none tl-z-24 tl-w-280px tl-font-sans tl-text-xs\\">
   <div tabindex=\\"0\\" class=\\"tl-shadow-xl tl-rounded tl-border-4 tl-border-solid tl-bg-primary tl-border-primary tl-overflow-hidden tl-w-full tl-h-full tl-flex tl-flex-col tl-justify-between\\">
-    <header class=\\"tl-relative tl-cursor-grabbing tl-p-4 tl-flex tl-justify-evenly tl-text-gray-200\\"><i class=\\"tl-cta-icon tl-bg-secondary\\">🍰</i>
-      <div><i class=\\"i-ic-baseline-drag-indicator tl-bg-secondary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-bg-secondary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-bg-secondary\\"></i></div><i class=\\"tl-cta-icon tl-bg-secondary\\">🌙</i>
+    <header class=\\"tl-relative tl-p-4 tl-flex tl-justify-between tl-items-center tl-text-gray-200\\"><i class=\\"tl-cta-icon tl-bg-secondary\\">🍰</i>
+      <div class=\\"tl-cursor-grabbing\\"><i class=\\"i-ic-baseline-drag-indicator tl-text-primary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-text-primary\\"></i><i class=\\"i-ic-baseline-drag-indicator tl-text-primary\\"></i></div>
+      <div class=\\"actions\\"><i class=\\"tl-text-sm tl-text-primary hover:tl-text-secondary tl-cursor-pointer i-carbon-moon\\"></i></div>
     </header>
     <div class=\\"tl-mb-4 tl-w-full tl-border-x-none tl-border-solid tl-border-1 tl-border-primary\\"><button class=\\"tl-bg-primary tl-text-primary tl-flex tl-items-center tl-justify-between tl-w-full tl-py-2 tl-px-4 tl-border-none tl-font-bold tl-text-xs tl-font-sans tl-cursor-pointer\\" aria-expanded=\\"false\\" aria-haspopup=\\"true\\" role=\\"button\\" data-folder=\\"camera\\" tabindex=\\"0\\"><span>camera</span><i class=\\"i-ic:baseline-keyboard-arrow-down\\"></i></button>
       <transition-stub name=\\"slide\\" enteractiveclass=\\"tl-animate-fade-in tl-animate-duration-200 tl-animate-ease-in-out\\" leaveactiveclass=\\"tl-animate-fade-out tl-animate-duration-200 tl-animate-ease-in-out\\" appear=\\"false\\" persisted=\\"true\\" css=\\"true\\">
