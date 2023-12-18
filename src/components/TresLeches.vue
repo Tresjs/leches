@@ -72,18 +72,24 @@ const groupedControls = computed(() => {
     >
       <header
         ref="handle"
-        class="tl-relative tl-cursor-grabbing tl-p-4 tl-flex tl-justify-evenly tl-text-gray-200"
+        class="tl-relative  tl-p-4 tl-flex tl-justify-between tl-items-center tl-text-gray-200"
       >
         <i class="tl-cta-icon tl-bg-secondary">🍰</i>
-        <div>
-          <i class="i-ic-baseline-drag-indicator tl-bg-secondary" />
-          <i class="i-ic-baseline-drag-indicator tl-bg-secondary" />
-          <i class="i-ic-baseline-drag-indicator tl-bg-secondary" />
+        <div class="tl-cursor-grabbing">
+          <i class="i-ic-baseline-drag-indicator tl-text-primary" />
+          <i class="i-ic-baseline-drag-indicator tl-text-primary" />
+          <i class="i-ic-baseline-drag-indicator tl-text-primary" />
         </div>
-        <i
-          class="tl-cta-icon tl-bg-secondary"
-          @click="toggleDark()"
-        >{{ isDark ? '☀️' : '🌙' }}</i>
+        <div class="actions">
+          <i
+            class="tl-text-sm tl-text-primary hover:tl-text-secondary tl-cursor-pointer"
+            :class="{
+              'i-carbon-moon': !isDark,
+              'i-carbon-sun': isDark,
+            }"
+            @click="toggleDark()"
+          />
+        </div>
       </header>
       <template
         v-for="(group, folderName) of groupedControls"
