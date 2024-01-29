@@ -147,10 +147,10 @@ importers:
         version: 1.1.23
       '@tresjs/cientos':
         specifier: 3.6.0
-        version: 3.6.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9)
+        version: 3.6.0(@tresjs/core@3.7.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9)
       '@tresjs/core':
-        specifier: 3.6.0
-        version: 3.6.0(three@0.158.0)(vue@3.3.9)
+        specifier: 3.7.0
+        version: 3.7.0(three@0.158.0)(vue@3.3.9)
       '@types/three':
         specifier: ^0.158.3
         version: 0.158.3
@@ -1825,7 +1825,7 @@ packages:
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
     dev: true
 
-  /@tresjs/cientos@3.6.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9):
+  /@tresjs/cientos@3.6.0(@tresjs/core@3.7.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9):
     resolution: {integrity: sha512-VM6LamAFlcKufbrtbYN71ncuAw2JPVfKUC6Ey9+scq05qvHdQM8fU0WoppNZEtmIL7m2aUqroOZRnr9LXyZPCg==}
     peerDependencies:
       '@tresjs/core': '>=3.2'
@@ -1833,7 +1833,7 @@ packages:
       tweakpane: '>=3.0.0'
       vue: '>=3.3'
     dependencies:
-      '@tresjs/core': 3.6.0(three@0.158.0)(vue@3.3.9)
+      '@tresjs/core': 3.7.0(three@0.158.0)(vue@3.3.9)
       '@vueuse/core': 10.6.1(vue@3.3.9)
       camera-controls: 2.7.3(three@0.158.0)
       stats-gl: 1.0.7
@@ -1849,8 +1849,8 @@ packages:
       - react
     dev: true
 
-  /@tresjs/core@3.6.0(three@0.158.0)(vue@3.3.9):
-    resolution: {integrity: sha512-eG5WFyETwSMmGt/5v+5yTk8nxU2ohyUdE2F6Dv4e7PIMXGsiNaT6ouT3jR9oK4LBU+I/1KZXb0V6HJKCS+AV/Q==}
+  /@tresjs/core@3.7.0(three@0.158.0)(vue@3.3.9):
+    resolution: {integrity: sha512-Hg6VK7RQuGiXyLlbB+7FdPyS4KERxIpnU8EO/UzmN4/Bfr6I9Kuo1F0LF+5BBFyxBPqc7sD1Dcy7Epj8We9ETg==}
     peerDependencies:
       three: '>=0.133'
       vue: '>=3.3'
