@@ -18,7 +18,7 @@ const planets = computed(() => Array.from({ length: value.value }, (_, i) => i +
 </script>
 
 <template>
-  <div class="w-full h-300px bg-gray-200 mb-8 relative grid grid-cols-2 gap-16 items-center">
+  <div class="w-full h-300px dark:bg-[#161618] bg-gray-200 mb-8 relative grid grid-cols-2 gap-16 items-center">
     <div class="p-4 flex gap-4 flex-wrap text-xl">
       <i
         v-for="planet in planets"

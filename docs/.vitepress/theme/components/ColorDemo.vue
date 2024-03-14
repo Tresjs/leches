@@ -11,7 +11,7 @@ const { value: color } = useControls({
 
 <template>
   <div
-    class="w-full h-300px bg-gray-200 mb-8 relative grid grid-cols-2 gap-16 items-center"
+    class="w-full h-300px dark:bg-[#161618] bg-gray-200 mb-8 relative grid grid-cols-2 gap-16 items-center"
     :style="{ backgroundColor: color }"
   >
     <div class="p-4">

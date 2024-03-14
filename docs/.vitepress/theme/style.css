@@ -121,6 +121,14 @@
  * Component: Home
  * -------------------------------------------------------------------------- */
 
+ :root.dark .box {
+  background-color: var(--vp-c-black);
+}
+
+:root.dark .clip {
+  -webkit-text-fill-color: var(--vp-c-white);
+}
+
 .box {
   border: 2px solid var(--vp-c-dark-2);
   border-radius: 8px;
@@ -146,3 +154,18 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: Link
+ * -------------------------------------------------------------------------- */
+
+:root.dark .link:hover .text {
+  color: white !important; 
+}
+
+:root.dark .is-active .text {
+  color: white !important; 
+}
+
+:root.dark .title {
+  color: white; 
+}
