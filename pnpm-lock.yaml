@@ -147,10 +147,10 @@ importers:
         version: 1.1.23
       '@tresjs/cientos':
         specifier: 3.6.0
-        version: 3.6.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9)
+        version: 3.6.0(@tresjs/core@3.9.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9)
       '@tresjs/core':
-        specifier: 3.6.0
-        version: 3.6.0(three@0.158.0)(vue@3.3.9)
+        specifier: 3.9.0
+        version: 3.9.0(three@0.158.0)(vue@3.3.9)
       '@types/three':
         specifier: ^0.158.3
         version: 0.158.3
@@ -1825,7 +1825,7 @@ packages:
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
     dev: true
 
-  /@tresjs/cientos@3.6.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9):
+  /@tresjs/cientos@3.6.0(@tresjs/core@3.9.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9):
     resolution: {integrity: sha512-VM6LamAFlcKufbrtbYN71ncuAw2JPVfKUC6Ey9+scq05qvHdQM8fU0WoppNZEtmIL7m2aUqroOZRnr9LXyZPCg==}
     peerDependencies:
       '@tresjs/core': '>=3.2'
@@ -1833,7 +1833,7 @@ packages:
       tweakpane: '>=3.0.0'
       vue: '>=3.3'
     dependencies:
-      '@tresjs/core': 3.6.0(three@0.158.0)(vue@3.3.9)
+      '@tresjs/core': 3.9.0(three@0.158.0)(vue@3.3.9)
       '@vueuse/core': 10.6.1(vue@3.3.9)
       camera-controls: 2.7.3(three@0.158.0)
       stats-gl: 1.0.7
@@ -1849,13 +1849,14 @@ packages:
       - react
     dev: true
 
-  /@tresjs/core@3.6.0(three@0.158.0)(vue@3.3.9):
-    resolution: {integrity: sha512-eG5WFyETwSMmGt/5v+5yTk8nxU2ohyUdE2F6Dv4e7PIMXGsiNaT6ouT3jR9oK4LBU+I/1KZXb0V6HJKCS+AV/Q==}
+  /@tresjs/core@3.9.0(three@0.158.0)(vue@3.3.9):
+    resolution: {integrity: sha512-6el70oXSduTvSA3XCI8/rQV2GzcgCLceZKA443CTU/MBPmRDULJ12q/UYl18Ij4CJ68rTqgVi0Da+WNMrs784A==}
     peerDependencies:
       three: '>=0.133'
       vue: '>=3.3'
     dependencies:
       '@alvarosabu/utils': 3.1.1
+      '@vue/devtools-api': 6.6.1
       '@vueuse/core': 10.7.0(vue@3.3.9)
       three: 0.158.0
       vue: 3.3.9(typescript@5.3.2)
@@ -2576,6 +2577,10 @@ packages:
 
   /@vue/devtools-api@6.5.1:
     resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
+
+  /@vue/devtools-api@6.6.1:
+    resolution: {integrity: sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==}
+    dev: true
 
   /@vue/language-core@1.8.24(typescript@5.3.2):
     resolution: {integrity: sha512-2ClHvij0WlsDWryPzXJCSpPc6rusZFNoVtRZGgGGkKCmKuIREDDKmH8j+1tYyxPYyH0qL6pZ6+IHD8KIm5nWAw==}
