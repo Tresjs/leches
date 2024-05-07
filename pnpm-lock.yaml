@@ -146,8 +146,8 @@ importers:
         specifier: ^1.1.23
         version: 1.1.23
       '@tresjs/cientos':
-        specifier: 3.6.0
-        version: 3.6.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9)
+        specifier: 3.9.0
+        version: 3.9.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9)
       '@tresjs/core':
         specifier: 3.6.0
         version: 3.6.0(three@0.158.0)(vue@3.3.9)
@@ -1825,8 +1825,8 @@ packages:
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
     dev: true
 
-  /@tresjs/cientos@3.6.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9):
-    resolution: {integrity: sha512-VM6LamAFlcKufbrtbYN71ncuAw2JPVfKUC6Ey9+scq05qvHdQM8fU0WoppNZEtmIL7m2aUqroOZRnr9LXyZPCg==}
+  /@tresjs/cientos@3.9.0(@tresjs/core@3.6.0)(three@0.158.0)(tweakpane@4.0.1)(vue@3.3.9):
+    resolution: {integrity: sha512-LAtMveKlecKvWh7TNWdwEs3nQUYMLqz9DZy0YhSZ6OVTfL2vevx2K4sH9744UME8OedUf4fkFFkX4OWQRHaDRQ==}
     peerDependencies:
       '@tresjs/core': '>=3.2'
       three: '>=0.133'
@@ -1834,13 +1834,13 @@ packages:
       vue: '>=3.3'
     dependencies:
       '@tresjs/core': 3.6.0(three@0.158.0)(vue@3.3.9)
-      '@vueuse/core': 10.6.1(vue@3.3.9)
-      camera-controls: 2.7.3(three@0.158.0)
-      stats-gl: 1.0.7
+      '@vueuse/core': 10.9.0(vue@3.3.9)
+      camera-controls: 2.8.3(three@0.158.0)
+      stats-gl: 2.2.8
       stats.js: 0.17.0
       three: 0.158.0
       three-custom-shader-material: 5.4.0(three@0.158.0)
-      three-stdlib: 2.28.7(three@0.158.0)
+      three-stdlib: 2.29.11(three@0.158.0)
       tweakpane: 4.0.1
       vue: 3.3.9(typescript@5.3.2)
     transitivePeerDependencies:
@@ -1925,6 +1925,10 @@ packages:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
+    dev: true
+
+  /@tweenjs/tween.js@23.1.2:
+    resolution: {integrity: sha512-kMCNaZCJugWI86xiEHaY338CU5JpD0B97p1j1IKNn/Zto8PgACjQx0UxbHjmOcLl/dDOBnItwD07KmCs75pxtQ==}
     dev: true
 
   /@types/argparse@1.0.38:
@@ -2058,6 +2062,16 @@ packages:
       '@types/stats.js': 0.17.3
       '@types/webxr': 0.5.10
       fflate: 0.6.10
+      meshoptimizer: 0.18.1
+    dev: true
+
+  /@types/three@0.163.0:
+    resolution: {integrity: sha512-uIdDhsXRpQiBUkflBS/i1l3JX14fW6Ot9csed60nfbZNXHDTRsnV2xnTVwXcgbvTiboAR4IW+t+lTL5f1rqIqA==}
+    dependencies:
+      '@tweenjs/tween.js': 23.1.2
+      '@types/stats.js': 0.17.3
+      '@types/webxr': 0.5.10
+      fflate: 0.8.2
       meshoptimizer: 0.18.1
     dev: true
 
@@ -2684,6 +2698,18 @@ packages:
       - vue
     dev: true
 
+  /@vueuse/core@10.9.0(vue@3.3.9):
+    resolution: {integrity: sha512-/1vjTol8SXnx6xewDEKfS0Ra//ncg4Hb0DaZiwKf7drgfMsKFExQ+FnnENcN6efPen+1kIzhLQoGSy0eDUVOMg==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.20
+      '@vueuse/metadata': 10.9.0
+      '@vueuse/shared': 10.9.0(vue@3.3.9)
+      vue-demi: 0.14.7(vue@3.3.9)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
+
   /@vueuse/integrations@10.6.1(focus-trap@7.5.4)(vue@3.3.9):
     resolution: {integrity: sha512-mPDupuofMJ4DPmtX/FfP1MajmWRzYDv8WSaTCo8LQ5kFznjWgmUQ16ApjYqgMquqffNY6+IRMdMgosLDRZOSZA==}
     peerDependencies:
@@ -2728,7 +2754,7 @@ packages:
       '@vueuse/core': 10.6.1(vue@3.3.9)
       '@vueuse/shared': 10.6.1(vue@3.3.9)
       focus-trap: 7.5.4
-      vue-demi: 0.14.6(vue@3.3.9)
+      vue-demi: 0.14.7(vue@3.3.9)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -2739,6 +2765,10 @@ packages:
 
   /@vueuse/metadata@10.7.0:
     resolution: {integrity: sha512-GlaH7tKP2iBCZ3bHNZ6b0cl9g0CJK8lttkBNUX156gWvNYhTKEtbweWLm9rxCPIiwzYcr/5xML6T8ZUEt+DkvA==}
+    dev: true
+
+  /@vueuse/metadata@10.9.0:
+    resolution: {integrity: sha512-iddNbg3yZM0X7qFY2sAotomgdHK7YJ6sKUvQqbvwnf7TmaVPxS4EJydcNsVejNdS8iWCtDk+fYXr7E32nyTnGA==}
     dev: true
 
   /@vueuse/shared@10.6.1(vue@3.3.9):
@@ -2753,6 +2783,15 @@ packages:
     resolution: {integrity: sha512-kc00uV6CiaTdc3i1CDC4a3lBxzaBE9AgYNtFN87B5OOscqeWElj/uza8qVDmk7/U8JbqoONLbtqiLJ5LGRuqlw==}
     dependencies:
       vue-demi: 0.14.6(vue@3.3.9)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
+
+  /@vueuse/shared@10.9.0(vue@3.3.9):
+    resolution: {integrity: sha512-Uud2IWncmAfJvRaFYzv5OHDli+FbOzxiVEQdLCKQKLyhz94PIyFC3CHcH7EDMwIn8NPtD06+PNbC/PiO0LGLtw==}
+    dependencies:
+      vue-demi: 0.14.7(vue@3.3.9)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -3347,8 +3386,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /camera-controls@2.7.3(three@0.158.0):
-    resolution: {integrity: sha512-L4mxjBd3u8qiOLozdWrH2P8ZybSsDXBF7iyNyqNEFJhPUkovmuARWR8JTc1B/qlclOIg6FvZZA/0uAZMMim0mw==}
+  /camera-controls@2.8.3(three@0.158.0):
+    resolution: {integrity: sha512-zFjqUR6onLkG+z1A6vAWfzovxZxWVSvp6e5t3lfZgfgPZtX3n74aykNAUaoRbq8Y3tOxadHkDjbfGDOP9hFf2w==}
     peerDependencies:
       three: '>=0.126.1'
     dependencies:
@@ -4968,6 +5007,10 @@ packages:
 
   /fflate@0.8.1:
     resolution: {integrity: sha512-/exOvEuc+/iaUm105QIiOt4LpBdMTWsXxqR0HDF35vx3fmaKzw7354gTilCh5rkzEt8WYyG//ku3h3nRmd7CHQ==}
+    dev: true
+
+  /fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
     dev: true
 
   /figures@5.0.0:
@@ -8295,8 +8338,10 @@ packages:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
     dev: true
 
-  /stats-gl@1.0.7:
-    resolution: {integrity: sha512-vZI82CjefSxLC1bjw36z28v0+QE9rJKymGlXtfWu+ipW70ZEAwa4EbO4LxluAfLfpqiaAS04NzpYBRLDeAwYWQ==}
+  /stats-gl@2.2.8:
+    resolution: {integrity: sha512-94G5nZvduDmzxBS7K0lYnynYwreZpkknD8g5dZmU6mpwIhy3caCrjAm11Qm1cbyx7mqix7Fp00RkbsonzKWnoQ==}
+    dependencies:
+      '@types/three': 0.163.0
     dev: true
 
   /stats.js@0.17.0:
@@ -8545,8 +8590,8 @@ packages:
       three: 0.158.0
     dev: true
 
-  /three-stdlib@2.28.7(three@0.158.0):
-    resolution: {integrity: sha512-E7NuztilCswBKnEoyqydvA7N4dy0cf/gLA0bKrrg6+Q6j4WtusGa/+t9oK2HVq47S1AHRH2CvFHpdIGNjPKo/A==}
+  /three-stdlib@2.29.11(three@0.158.0):
+    resolution: {integrity: sha512-vSyUavKCwOJQd2ch9IHhyJVx6eNG3y+z3/LulqHM7OLMy81OqnmIrvc2b4phKr/c1aVjHRNG2X7JOklfrDDcmQ==}
     peerDependencies:
       three: '>=0.128.0'
     dependencies:
@@ -9444,6 +9489,21 @@ packages:
         optional: true
     dependencies:
       vue: 3.3.9(typescript@5.3.2)
+
+  /vue-demi@0.14.7(vue@3.3.9):
+    resolution: {integrity: sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.3.9(typescript@5.3.2)
+    dev: true
 
   /vue-eslint-parser@9.3.2(eslint@8.54.0):
     resolution: {integrity: sha512-q7tWyCVaV9f8iQyIA5Mkj/S6AoJ9KBN8IeUSf3XEmBrOtxOZnfTg5s4KClbZBCK3GtnT/+RyCLZyDHuZwTuBjg==}
