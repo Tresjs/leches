@@ -26,7 +26,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="w-full h-300px bg-gray-200 mb-8 relative flex flex-col justify-center items-center">
+  <div class="w-full h-300px dark:bg-[#161618] bg-gray-200 mb-8 relative flex flex-col justify-center items-center">
     <p class="mb-8">
       Try toggling the `isVisible` control
     </p>
