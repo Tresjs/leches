@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tresjs/leches": "workspace:*",
-    "three": "^0.158.0"
+    "three": "^0.171.0"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.23",
