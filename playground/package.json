@@ -23,7 +23,7 @@
     "@tresjs/core": "3.6.0",
     "@types/three": "^0.158.3",
     "three": "^0.158.0",
-    "unplugin-auto-import": "^0.17.8",
+    "unplugin-auto-import": "^0.19.0",
     "unplugin-vue-components": "^0.25.2",
     "vite-plugin-qrcode": "^0.2.4"
   }
