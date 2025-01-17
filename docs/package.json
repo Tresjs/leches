@@ -14,6 +14,6 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.5",
-    "unocss": "^0.57.7"
+    "unocss": "^65.0.0"
   }
 }
