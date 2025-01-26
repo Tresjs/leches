@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Control } from '../types'
+import type { LechesControl } from '../types'
 import NumberControl from './NumberControl.vue'
 import TextControl from './TextControl.vue'
 import BooleanControl from './BooleanControl.vue'
@@ -11,7 +11,7 @@ import SelectControl from './SelectControl.vue'
 import ButtonControl from './ButtonControl.vue'
 
 defineProps<{
-  control: Control
+  control: LechesControl
 }>()
 
 const emit = defineEmits(['change'])
@@ -66,11 +66,9 @@ function onChange(value: string) {
     />
     <div
       v-else-if="control.type === 'button'"
-      class="tl-p-2"
-      :class="control.value.size === 'tl-block' ? 'tl-flex' : 'tl-inline-flex'"
+      class="tl-py-2 tl-px-4 tl-flex tl-justify-end"
     >
       <ButtonControl
-
         :label="control.label"
         :control="control"
       />

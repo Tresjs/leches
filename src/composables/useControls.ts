@@ -1,12 +1,13 @@
-import type { ToRefs } from 'vue'
-import { isReactive, isRef, provide, reactive, ref, toRefs } from 'vue'
-import type { Control } from '../types'
+import { capitalize, isReactive, isRef, provide, reactive, ref, type Ref, toRefs } from 'vue'
+import type { LechesControl, LechesSelectOption } from '../types'
 
 export const CONTROLS_CONTEXT_KEY = Symbol('CONTROLS_CONTEXT_KEY')
 const DEFAULT_UUID = 'default'
 
 // Internal state
-const controlsStore: { [uuid: string]: { [key: string]: Control } } = reactive({})
+const controlsStore: { [uuid: string]: Record<string, LechesControl> } = reactive({
+  default: {},
+})
 
 export function useControlsProvider(uuid: string = DEFAULT_UUID) {
   provide(CONTROLS_CONTEXT_KEY, controlsStore)
@@ -42,21 +43,21 @@ const inferType = (value: any): string => {
   return 'unknown'
 }
 
-const createControl = (key: string, value: any, type: string, folderName: string | null): Control => {
-  const control: Control = {
-    key: ref(key),
-    label: ref(key),
-    name: ref(key),
-    type: ref(type),
-    value: ref(value),
-    visible: ref(true),
-    icon: ref(),
-    uniqueKey: ref(key),
-    [key]: ref(value),
-  }
+const createControl = <T>(key: string, value: T, type: string, folderName: string | null) => {
+  const control = reactive<LechesControl<T>>({
+    key,
+    label: key,
+    name: key,
+    type,
+    value,
+    visible: true,
+    icon: '',
+    uniqueKey: key,
+  })
 
   if (folderName) {
-    control.folder = ref(folderName)
+    control.folder = folderName
+    control.label = control.label.replace(folderName.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim(), '').toLowerCase()
   }
 
   return control
@@ -72,8 +73,9 @@ export const useControls = (
   folderNameOrParams: string | { [key: string]: any },
   paramsOrOptions?: { [key: string]: any } | { uuid?: string },
   options?: { uuid?: string },
-): Control | ToRefs<{ [key: string]: Control }> => {
-  const result: { [key: string]: Control } = {}
+): { [key: string]: Ref<any> } => {
+  const result: { [key: string]: LechesControl } = {}
+  const values: { [key: string]: Ref<any> } = {}
 
   const folderName = typeof folderNameOrParams === 'string' ? folderNameOrParams : null
   const controlsParams = folderName ? paramsOrOptions as { [key: string]: any } : folderNameOrParams
@@ -89,7 +91,8 @@ export const useControls = (
     const control = createControl('fpsgraph', null, 'fpsgraph', null)
     controlsStore[uuid].fpsgraph = control
     result.fpsgraph = control
-    return toRefs(reactive(result))
+    values.fpsgraph = ref(control.value)
+    return values
   }
 
   const controls = controlsStore[uuid]
@@ -98,10 +101,10 @@ export const useControls = (
   const isParamsReactive = isReactive(controlsParams)
   const reactiveRefs = isParamsReactive ? toRefs(controlsParams as { [key: string]: any }) : {}
 
-  for (const key in controlsParams as any) {
+  for (let key in controlsParams as any) {
     let value = (controlsParams as any)[key]
     let uniqueKey = key
-
+    const label = `${key}`
     // If controlsParams is reactive, use the reactive ref directly
     if (isParamsReactive && reactiveRefs[key]) {
       value = reactiveRefs[key]
@@ -109,7 +112,11 @@ export const useControls = (
 
     // If the control is part of a folder, prefix the key with the folder name
     if (folderName) {
-      uniqueKey = `${folderName}${key.charAt(0).toUpperCase() + key.slice(1)}`
+      key = `${folderName.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim()}${capitalize(key)}`
+      uniqueKey = `${uuid}-${key}`
+    }
+    else {
+      uniqueKey = `${uuid}-${key}`
     }
 
     // If the value is an object with control options
@@ -120,39 +127,41 @@ export const useControls = (
       const control = createControl(key, reactiveValue, controlType, folderName)
 
       if (controlType === 'select') {
-        control.options = ref(controlOptions.options.map((option: string | { text: string, value: any }) => {
-          if (typeof option === 'object' && option.text && option.value) {
-            return option
-          }
-          else {
-            return {
-              text: option,
-              value: option,
+        control.options = (controlOptions.options.map((option: string | LechesSelectOption) => {
+          if (typeof option === 'object') {
+            if ('text' in option && 'value' in option) {
+              return option as LechesSelectOption
             }
+          }
+          return {
+            text: String(option),
+            value: option,
           }
         }))
       }
 
       if (controlType === 'range') {
-        control.min = ref(controlOptions.min || 0)
-        control.max = ref(controlOptions.max || 1)
-        control.step = ref(controlOptions.step || 0.1)
+        control.min = controlOptions.min || 0
+        control.max = controlOptions.max || 1
+        control.step = controlOptions.step || 0.1
       }
 
-      control.label.value = controlOptions.label || key
-      control.icon.value = controlOptions.icon
-      control.visible.value = controlOptions.visible !== undefined ? controlOptions.visible : true
-      control.uniqueKey.value = uniqueKey
-      controls[uniqueKey] = control
-      result[uniqueKey] = control
+      control.label = controlOptions.label || label
+      control.icon = controlOptions.icon || ''
+      control.visible = controlOptions.visible !== undefined ? controlOptions.visible : true
+      control.uniqueKey = uniqueKey
+      controls[key] = control
+      result[key] = control
+      values[key] = reactiveValue
       continue
     }
 
     // If the value is a ref, use it directly
     if (isRef(value)) {
       const control = createControl(key, value, (value.value as any).type || inferType(value.value), folderName)
-      controls[uniqueKey] = control
-      result[uniqueKey] = control
+      controls[key] = control
+      result[key] = control
+      values[key] = value
       continue
     }
 
@@ -165,13 +174,15 @@ export const useControls = (
     }
 
     // For non-ref values
-    const control = createControl(key, value, value.type || inferType(value), folderName)
+    const refValue = ref(value)
+    const control = createControl(key, refValue, value.type || inferType(value), folderName)
 
     // Update the internal state
-    controls[uniqueKey] = control
-    result[uniqueKey] = control
-    control.uniqueKey.value = uniqueKey
+    controls[key] = control
+    result[key] = control
+    values[key] = refValue
+    control.uniqueKey = uniqueKey
   }
 
-  return Object.keys(result).length > 1 ? toRefs(reactive(result)) : Object.values(result)[0]
+  return values
 }

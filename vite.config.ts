@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 
 import banner from 'vite-plugin-banner'
 import dts from 'vite-plugin-dts'
+import svgLoader from 'vite-svg-loader'
 import analyze from 'rollup-plugin-analyzer'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { resolve } from 'pathe'
@@ -14,6 +15,7 @@ import { presetIcons, presetUno, presetWebFonts, transformerDirectives } from 'u
 import { bold, gray, lightGreen, magenta } from 'kolorist'
 
 import pkg from './package.json'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
 
 // eslint-disable-next-line no-console
 console.log(`${lightGreen('▲')} ${gray('■')} ${magenta('🍰')} ${bold('Tres/leches')} v${pkg.version}`)
@@ -22,6 +24,7 @@ console.log(`${lightGreen('▲')} ${gray('■')} ${magenta('🍰')} ${bold('Tres
 export default defineConfig({
   plugins: [
     vue(),
+    svgLoader(),
     dts({
       insertTypesEntry: true,
     }),
@@ -32,6 +35,9 @@ export default defineConfig({
     }),
     UnoCSS({
       /* options */
+      shortcuts: {
+        'tl-leches-input': 'tl-p-2 tl-rounded tl-text-left tl-text-xs tl-text-gray-400 tl-bg-gray-100 dark:tl-bg-dark-300 dark:tl-text-gray-400 tl-outline-none tl-border-none focus:tl-ring-2 focus:tl-border-gray-200 focus:tl-ring focus:tl-ring-gray-200 tl-font-sans',
+      },
       presets: [
         presetUno({
           prefix: 'tl-',
@@ -45,8 +51,11 @@ export default defineConfig({
             'vertical-align': 'middle',
             // ...
           },
-        }),
 
+        }),
+        presetScrollbar({
+          prefix: 'tl-',
+        }),
         presetWebFonts({
           fonts: {
             sans: 'Roboto Mono',
