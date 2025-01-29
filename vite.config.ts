@@ -42,6 +42,10 @@ export default defineConfig({
         presetUno({
           prefix: 'tl-',
           variablePrefix: 'tl-',
+          /* dark: {
+            dark: '.l-dark',
+            light: '.l-light',
+          }, */
         }),
         presetIcons({
           scale: 1.2,

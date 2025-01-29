@@ -16,7 +16,11 @@ function onChange(event: Event) {
   emit('change', (target as HTMLInputElement).valueAsNumber)
 }
 
-const isDark = useDark()
+const isDark = useDark({
+/*   storageKey: 'leches-color-scheme',
+  selector: '#tresleches-container', */
+  attribute: 'class',
+})
 
 const sliderFilledStyle = computed(() => {
   const colorStart = isDark.value ? '#9ca3af' : '#2d2d2d'

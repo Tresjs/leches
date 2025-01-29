@@ -67,7 +67,9 @@ useRafFn(({ timestamp }) => {
   }
 })
 
-const isDark = useDark()
+const isDark = useDark({
+  attribute: 'class',
+})
 </script>
 
 <template>
