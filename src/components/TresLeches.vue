@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, toRefs, watch } from 'vue'
 import { useDraggable } from '../composables/useDraggable'
-import { useWindowSize } from '@vueuse/core'
+import { useDark, useWindowSize } from '@vueuse/core'
 import { dispose, useControlsProvider } from '../composables/useControls'
 import type { LechesControl } from '../types'
 import Folder from './Folder.vue'
@@ -239,10 +239,14 @@ watch(isCollapsed, async (value) => {
 onMounted(() => {
   handleScroll()
 })
+
+useDark({
+  attribute: 'class',
+})
 </script>
 
 <template>
-  <div class="tresleches-container">
+  <div id="tresleches-container" class="tresleches-container">
     <div
       :id="`tres-leches-pane-${uuid}`"
       ref="paneRef"
@@ -254,7 +258,8 @@ onMounted(() => {
       :style="panelStyle"
     >
       <header class="tl-flex tl-justify-between tl-items-center tl-text-gray-200 dark:tl-text-gray-600 tl-text-xs">
-        <div v-if="!isCollapsed && float" class="w-1/3"></div>
+        <div v-if="!isCollapsed && float" class="w-1/3">
+        </div>
         <div v-if="!isCollapsed && float" ref="handleRef" class="tl-cursor-grabbing w-1/3">
           <i class="i-ic-baseline-drag-indicator"></i><i class="i-ic-baseline-drag-indicator"></i><i
             class="i-ic-baseline-drag-indicator"
