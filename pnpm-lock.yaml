@@ -150,8 +150,8 @@ importers:
         specifier: ^1.2.5
         version: 1.2.5
       '@tresjs/cientos':
-        specifier: 3.6.0
-        version: 3.6.0(@tresjs/core@3.6.0(three@0.158.0)(vue@3.5.13(typescript@5.7.3)))(three@0.158.0)(tweakpane@4.0.5)(vue@3.5.13(typescript@5.7.3))
+        specifier: 3.9.0
+        version: 3.9.0(@tresjs/core@3.6.0(three@0.158.0)(vue@3.5.13(typescript@5.7.3)))(@types/three@0.158.3)(three@0.158.0)(tweakpane@4.0.5)(vue@3.5.13(typescript@5.7.3))
       '@tresjs/core':
         specifier: 3.6.0
         version: 3.6.0(three@0.158.0)(vue@3.5.13(typescript@5.7.3))
@@ -1453,8 +1453,8 @@ packages:
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
 
-  '@tresjs/cientos@3.6.0':
-    resolution: {integrity: sha512-VM6LamAFlcKufbrtbYN71ncuAw2JPVfKUC6Ey9+scq05qvHdQM8fU0WoppNZEtmIL7m2aUqroOZRnr9LXyZPCg==}
+  '@tresjs/cientos@3.9.0':
+    resolution: {integrity: sha512-LAtMveKlecKvWh7TNWdwEs3nQUYMLqz9DZy0YhSZ6OVTfL2vevx2K4sH9744UME8OedUf4fkFFkX4OWQRHaDRQ==}
     peerDependencies:
       '@tresjs/core': '>=3.2'
       three: '>=0.133'
@@ -2343,8 +2343,8 @@ packages:
     resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
     engines: {node: '>=16'}
 
-  camera-controls@2.7.3:
-    resolution: {integrity: sha512-L4mxjBd3u8qiOLozdWrH2P8ZybSsDXBF7iyNyqNEFJhPUkovmuARWR8JTc1B/qlclOIg6FvZZA/0uAZMMim0mw==}
+  camera-controls@2.9.0:
+    resolution: {integrity: sha512-TpCujnP0vqPppTXXJRYpvIy0xq9Tro6jQf2iYUxlDpPCNxkvE/XGaTuwIxnhINOkVP/ob2CRYXtY3iVYXeMEzA==}
     peerDependencies:
       three: '>=0.126.1'
 
@@ -5320,8 +5320,11 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  stats-gl@1.0.7:
-    resolution: {integrity: sha512-vZI82CjefSxLC1bjw36z28v0+QE9rJKymGlXtfWu+ipW70ZEAwa4EbO4LxluAfLfpqiaAS04NzpYBRLDeAwYWQ==}
+  stats-gl@2.4.2:
+    resolution: {integrity: sha512-g5O9B0hm9CvnM36+v7SFl39T7hmAlv541tU81ME8YeSb3i1CIP5/QdDeSB3A0la0bKNHpxpwxOVRo2wFTYEosQ==}
+    peerDependencies:
+      '@types/three': '*'
+      three: '*'
 
   stats.js@0.17.0:
     resolution: {integrity: sha512-hNKz8phvYLPEcRkeG1rsGmV5ChMjKDAWU7/OJJdDErPBNChQXxCo3WZurGpnWc6gZhAzEPFad1aVgyOANH1sMw==}
@@ -5488,8 +5491,8 @@ packages:
       react:
         optional: true
 
-  three-stdlib@2.28.7:
-    resolution: {integrity: sha512-E7NuztilCswBKnEoyqydvA7N4dy0cf/gLA0bKrrg6+Q6j4WtusGa/+t9oK2HVq47S1AHRH2CvFHpdIGNjPKo/A==}
+  three-stdlib@2.35.7:
+    resolution: {integrity: sha512-k1oDqa1GYT4smhsN204DtmcQLfDuzSD4bbGmErTvUH40dpcwgBUgbwMzYYVWYB5tT7u0KBvAQpwuAPEXuwJVpQ==}
     peerDependencies:
       three: '>=0.128.0'
 
@@ -7472,20 +7475,21 @@ snapshots:
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
-  '@tresjs/cientos@3.6.0(@tresjs/core@3.6.0(three@0.158.0)(vue@3.5.13(typescript@5.7.3)))(three@0.158.0)(tweakpane@4.0.5)(vue@3.5.13(typescript@5.7.3))':
+  '@tresjs/cientos@3.9.0(@tresjs/core@3.6.0(three@0.158.0)(vue@3.5.13(typescript@5.7.3)))(@types/three@0.158.3)(three@0.158.0)(tweakpane@4.0.5)(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@tresjs/core': 3.6.0(three@0.158.0)(vue@3.5.13(typescript@5.7.3))
       '@vueuse/core': 10.11.1(vue@3.5.13(typescript@5.7.3))
-      camera-controls: 2.7.3(three@0.158.0)
-      stats-gl: 1.0.7
+      camera-controls: 2.9.0(three@0.158.0)
+      stats-gl: 2.4.2(@types/three@0.158.3)(three@0.158.0)
       stats.js: 0.17.0
       three: 0.158.0
       three-custom-shader-material: 5.4.0(three@0.158.0)
-      three-stdlib: 2.28.7(three@0.158.0)
+      three-stdlib: 2.35.7(three@0.158.0)
       tweakpane: 4.0.5
       vue: 3.5.13(typescript@5.7.3)
     transitivePeerDependencies:
       - '@react-three/fiber'
+      - '@types/three'
       - '@vue/composition-api'
       - react
 
@@ -8689,7 +8693,7 @@ snapshots:
 
   camelcase@8.0.0: {}
 
-  camera-controls@2.7.3(three@0.158.0):
+  camera-controls@2.9.0(three@0.158.0):
     dependencies:
       three: 0.158.0
 
@@ -12291,7 +12295,10 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  stats-gl@1.0.7: {}
+  stats-gl@2.4.2(@types/three@0.158.3)(three@0.158.0):
+    dependencies:
+      '@types/three': 0.158.3
+      three: 0.158.0
 
   stats.js@0.17.0: {}
 
@@ -12457,7 +12464,7 @@ snapshots:
       object-hash: 3.0.0
       three: 0.158.0
 
-  three-stdlib@2.28.7(three@0.158.0):
+  three-stdlib@2.35.7(three@0.158.0):
     dependencies:
       '@types/draco3d': 1.4.9
       '@types/offscreencanvas': 2019.7.3
