@@ -1,6 +1,21 @@
-# TresLeches 🍰
+# ⚠️ This repository has been archived
 
-> Tasty GUI controls for Vue controls
+This package has been moved to the TresJS monorepo.
 
-- Tasty design 🤤
-- Smart field recognition 🧠
+## New Location
+
+👉 **[github.com/Tresjs/tres](https://github.com/Tresjs/tres)**
+
+All future development, issues, and pull requests should be directed to the monorepo.
+
+## Installation
+
+The package is still available on npm with the same name. Installation instructions remain the same:
+
+```bash
+pnpm add @tresjs/leches
+```
+
+## Documentation
+
+📚 Visit [docs.tresjs.org](https://docs.tresjs.org) for the latest documentation.
